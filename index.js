@@ -31,6 +31,8 @@ function startGame() {
     let secondCard = getRandomCard()
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
+    document.getElementById("start-btn").style.display = "none"
+    document.getElementById("newCard-btn").style.display = "inline-block";
     renderGame()
 }
 
@@ -49,6 +51,8 @@ function renderGame() {
     } else {
         message = "You're out of the game!"
         isAlive = false
+        document.getElementById("start-btn").style.display = "inline-block"
+        document.getElementById("newCard-btn").style.display = "none";
     }
     messageEl.textContent = message
 }
@@ -60,5 +64,6 @@ function newCard() {
         sum += card
         cards.push(card)
         renderGame()        
-    }
+    } 
 }
+
